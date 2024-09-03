@@ -1,3 +1,4 @@
+package swap;
 public class swapNumbers {
     //swapping without temp variables
     public static void main(String[] args) {
