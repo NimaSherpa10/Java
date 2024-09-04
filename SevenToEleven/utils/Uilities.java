@@ -1,4 +1,4 @@
-package Utils;
+package utils;
 
 public class Uilities {
     public static double percentToAmount(double price, double percent) {

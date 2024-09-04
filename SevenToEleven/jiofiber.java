@@ -1,4 +1,4 @@
-import static Utils.Uilities.*;
+import static utils.Uilities.*;
 
 public class jiofiber {
     public static void main (String[] args) {

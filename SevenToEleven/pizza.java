@@ -1,4 +1,4 @@
-import static Utils.Uilities.*;
+import static utils.Uilities.*;
 
 public class pizza {
     public static void main(String[] args) {
