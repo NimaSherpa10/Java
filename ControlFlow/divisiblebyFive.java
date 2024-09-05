@@ -9,7 +9,7 @@ public class divisiblebyFive {
         if(num % 5 == 0) {
             return(num + " is divisble by 5");
         }
-        return( num + " is not divisble by 3");
+        return( num + " is not divisble by 5");
     }
     }
 
