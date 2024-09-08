@@ -23,6 +23,7 @@ public class SwapFirstLastDigit {
             }
             System.out.println(last_digit);
             System.out.println(first_digit);
+            System.out.println("The Swapped numbers are : ")
         }
     }
 }
