@@ -16,6 +16,6 @@ public class powerWithoutPow {
         }
 
         System.out.println("The base is " + base + " and the exponent is " + pow + " and the result is >>> " + result);
-        System.out.println();
+       
     }
 }
