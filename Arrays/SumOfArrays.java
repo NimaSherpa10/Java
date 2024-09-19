@@ -1,5 +1,7 @@
 package Arrays;
-
+/**
+ * 23) Program to print the sum of all the elements of an array
+ */
 import java.util.Arrays;
 
 public class SumOfArrays {
