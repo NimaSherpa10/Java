@@ -1,58 +1,68 @@
 package practice;
 
-class ThreadJoin extends Thread {
-	@Override
-	public void run() {
-		// TODO Auto-generated method stub
-		for (int j = 0; j < 2; ++j) {
-			try {
-				Thread.sleep(3000);
-				System.out.println("The Current Thread name is : " + Thread.currentThread().getName());
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
- 
-		}
-	}
-}
- 
-public class ThreadJoinExample {
- 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
- 
-		// creating three threads
-		ThreadJoin th1 = new ThreadJoin();
-		ThreadJoin th2 = new ThreadJoin();
-		ThreadJoin th3 = new ThreadJoin();
- 
-		th1.start();
- 
-		
-		try {
-			System.out.println("The Current Thread name is : " + Thread.currentThread().getName());
- 
-			th1.join();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		th2.start();
-		try {
-			System.out.println("The Current Thread name is : " + Thread.currentThread().getName());
- 
-			th2.join();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		th3.start();
- 
-	
- 
-		
+class SumThread extends Thread {
+    private int a;
+    private int b;
+    private int sum;
 
+    public SumThread(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+
+    @Override
+    public void run() {
+        sum = a + b;
+        System.out.println("Sum --> " + sum);
+    }
+
+    public int getSum() {
+        return sum;
+    }
+}
+
+class FactorialThread extends Thread {
+    private int number;
+    private int factorial;
+
+    public FactorialThread(int number) {
+        this.number = number;
+    }
+
+    @Override
+    public void run() {
+        factorial = 1;
+        for (int i = 1; i <= number; i++) {
+            factorial *= i;
+        }
+        System.out.println("Factorial of " + number + " --> " + factorial);
+    }
+}
+
+public class ThreadJoinExample {
+
+    public static void main(String[] args) {
+        // Create the sum thread
+        SumThread sumThread = new SumThread(5, 10);
+        sumThread.start();
+
+        try {
+            // Wait for the sum thread to complete
+            sumThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // After the sum is calculated, retrieve the sum and create the factorial thread
+        int sumResult = sumThread.getSum();
+        FactorialThread factorialThread = new FactorialThread(sumResult);
+        factorialThread.start();
+
+        try {
+            // Wait for the factorial thread to complete
+            factorialThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

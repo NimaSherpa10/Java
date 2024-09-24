@@ -35,14 +35,13 @@ public class Fare {
     }
     
      public void CalculateFare() {
-        // Example: A simple fare calculation based on the distance (for demonstration)
-        // You can replace this with actual logic based on specific requirements.
+       
         if (origin.equalsIgnoreCase("City A") && Destination.equalsIgnoreCase("City B")) {
-            fare = 100.0;  // Example fare between City A and City B
+            fare = 100.0;  
         } else if (origin.equalsIgnoreCase("City A") && Destination.equalsIgnoreCase("City C")) {
-            fare = 150.0;  // Example fare between City A and City C
+            fare = 150.0;  
         } else {
-            fare = 200.0;  // Default fare for any other route
+            fare = 200.0;  
         }
     }
 

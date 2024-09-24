@@ -11,12 +11,12 @@ public class SeasonalPass extends Fare {
         return discount;
     }
 
-    public void SeasonalFare() {
-        double discountAmount = (discount / 100) * getFare();
-        fare = getFare() - discountAmount;
-    
-
+    public double getFare() {
+        double discountAmount = (discount / 100) * super.getFare();
+        return super.getFare() - discountAmount;  // 40% of the fare
     }
+
+ 
     public void PrintFare() {
         System.out.println("Seasonal fare from " + getOrigin() + " to " + getDestination() + " after 10% discount is: $" + getFare());
     }
