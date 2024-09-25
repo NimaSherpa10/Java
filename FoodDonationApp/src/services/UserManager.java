@@ -9,11 +9,13 @@ public class UserManager {
     private HashMap<String, User> userMap; 
     private ArrayList<Donor> donors;
     private ArrayList<Recipient> recipients;
+    private ArrayList<Donation> donations; 
 
     public UserManager() {
         this.donors = new ArrayList<>();
         this.recipients = new ArrayList<>();
         this.userMap = new HashMap<>();
+        this.donations = new ArrayList<>();
     }
 
     // Register a Donor
@@ -55,6 +57,21 @@ public class UserManager {
     public void displayUsers() {
         for (User user : userMap.values()) {
             System.out.println(user);
+        }
+    }
+
+
+    public void registerDonation(String donorEmail, String itemName, int quantity, String unit, String expirationDate) {
+        DonationItem donationItem = new DonationItem(itemName, quantity, unit, expirationDate);
+        Donation donation = new Donation(donorEmail);
+        donation.addItem(donationItem);
+        donations.add(donation);
+        System.out.println("Donation registered successfully!");
+    }
+
+    public void displayDonations() {
+        for (Donation donation : donations) {
+            System.out.println(donation);
         }
     }
 }
