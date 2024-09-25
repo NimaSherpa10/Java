@@ -75,20 +75,23 @@ public class UserManager {
         }
     }
 
-    // Claim a donation
-public void claimDonation(String donorEmail, String user) {
+// Claim a donation item
+public void claimDonationItem(String donorEmail, String itemName, String recipientEmail) {
     for (Donation donation : donations) {
         if (donation.getDonorEmail().equals(donorEmail)) {
-            if (!donation.isClaimed()) {
-                donation.claim(); // Mark the donation as claimed
-                System.out.println("Donation claimed successfully!");
-            } else {
-                System.out.println("Donation has already been claimed.");
+            for (DonationItem item : donation.getItems()) {
+                if (item.getItemName().equalsIgnoreCase(itemName)) {
+                    item.claim(); // Claim the specific item
+                    return; // Successfully claimed the item
+                }
             }
+            System.out.println("Item not found or already claimed.");
             return;
         }
     }
     System.out.println("Donation not found for the provided email.");
 }
+
+
 
 }

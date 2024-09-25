@@ -38,10 +38,14 @@ public class RecipientMenu {
             }
         }
     }
-
     private void claimDonation(Recipient recipient) {
         System.out.print("Enter the donor email of the donation you want to claim: ");
         String donorEmail = scanner.nextLine();
-        userManager.claimDonation(donorEmail, recipient.getEmail());
+        
+        System.out.print("Enter the item name you want to claim: ");
+        String itemName = scanner.nextLine();
+        
+        userManager.claimDonationItem(donorEmail, itemName, recipient.getEmail());
     }
+    
 }

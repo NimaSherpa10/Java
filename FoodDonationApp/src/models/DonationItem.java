@@ -5,12 +5,14 @@ public class DonationItem {
     private int quantity;
     private String unit; 
     private String expirationDate;
+    private boolean claimed; // New field to track claimed status
 
     public DonationItem(String itemName, int quantity, String unit, String expirationDate) {
         this.itemName = itemName;
         this.quantity = quantity;
         this.unit = unit;
         this.expirationDate = expirationDate;
+        this.claimed = false; // Initially, items are not claimed
     }
 
     public String getItemName() {
@@ -29,8 +31,21 @@ public class DonationItem {
         return expirationDate;
     }
 
+    public boolean isClaimed() {
+        return claimed; // Method to check if the item is claimed
+    }
+
+    public void claim() {
+        if (!claimed) {
+            claimed = true; // Mark the item as claimed
+            System.out.println(itemName + " claimed successfully!");
+        } else {
+            System.out.println("Claim failed: Item already claimed.");
+        }
+    }
+
     @Override
     public String toString() {
-        return "Item: " + itemName + ", Quantity: " + quantity + " " + unit + ", Expiration Date: " + expirationDate;
+        return "Item: " + itemName + ", Quantity: " + quantity + " " + unit + ", Expiration Date: " + expirationDate + ", Claimed: " + (claimed ? "Yes" : "No");
     }
 }
