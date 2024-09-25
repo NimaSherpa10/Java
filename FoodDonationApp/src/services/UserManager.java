@@ -74,4 +74,21 @@ public class UserManager {
             System.out.println(donation);
         }
     }
+
+    // Claim a donation
+public void claimDonation(String donorEmail, String user) {
+    for (Donation donation : donations) {
+        if (donation.getDonorEmail().equals(donorEmail)) {
+            if (!donation.isClaimed()) {
+                donation.claim(); // Mark the donation as claimed
+                System.out.println("Donation claimed successfully!");
+            } else {
+                System.out.println("Donation has already been claimed.");
+            }
+            return;
+        }
+    }
+    System.out.println("Donation not found for the provided email.");
+}
+
 }
