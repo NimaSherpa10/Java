@@ -2,10 +2,13 @@ package FoodDonationApp.test;
 
 import FoodDonationApp.src.models.Donor;
 import FoodDonationApp.src.models.Recipient;
-import FoodDonationApp.src.models.User;
+
 
 public class Test {
    public static void main(String[] args) {
+    /**
+     * Donor object creates a new donor
+     */
      Donor donor = new Donor(
             "donor@example.com", 
             "password123", 
