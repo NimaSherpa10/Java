@@ -1,7 +1,8 @@
-package FoodDonationApp.services;
+package FoodDonationApp.src.services;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
 import FoodDonationApp.src.models.*;
 
 public class UserManager {

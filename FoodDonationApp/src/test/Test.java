@@ -1,7 +1,7 @@
-package FoodDonationApp.test;
+package FoodDonationApp.src.test;
 
-import FoodDonationApp.services.UserManager;
-import FoodDonationApp.src.models.User; // Add this import statement
+import FoodDonationApp.src.models.*;
+import FoodDonationApp.src.services.UserManager;
 
 public class Test {
     public static void main(String[] args) {
