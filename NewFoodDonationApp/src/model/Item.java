@@ -2,13 +2,13 @@ package NewFoodDonationApp.src.model;
 
 public class Item {
     private String name;
-    private int quantity;
+    private double quantity;
     private String unit; 
     private String expirationDate;
     private boolean claimed;
     private int itemId;
 
-    public Item(String name, int quantity, String unit, String expirationDate, boolean claimed) {
+    public Item(String name, double quantity, String unit, String expirationDate, boolean claimed) {
         this.name = name;
         this.quantity = quantity;
         this.unit = unit;
@@ -25,7 +25,7 @@ public class Item {
         this.name = name;
     }
 
-    public int getQuantity() {  
+    public double getQuantity() {  
         return quantity;
     }
 
