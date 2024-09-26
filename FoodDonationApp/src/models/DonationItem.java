@@ -5,14 +5,14 @@ public class DonationItem {
     private int quantity;
     private String unit; 
     private String expirationDate;
-    private boolean claimed; // New field to track claimed status
+    private boolean claimed; 
 
     public DonationItem(String itemName, int quantity, String unit, String expirationDate) {
         this.itemName = itemName;
         this.quantity = quantity;
         this.unit = unit;
         this.expirationDate = expirationDate;
-        this.claimed = false; // Initially, items are not claimed
+        this.claimed = false; 
     }
 
     public String getItemName() {
@@ -32,7 +32,7 @@ public class DonationItem {
     }
 
     public boolean isClaimed() {
-        return claimed; // Method to check if the item is claimed
+        return claimed; 
     }
 
     public void claim() {

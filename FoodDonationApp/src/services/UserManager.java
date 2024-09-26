@@ -75,6 +75,22 @@ public class UserManager {
         }
     }
 
+    public void getDonationsByDonor(String donorEmail) {
+        boolean donationFound = false; // Flag to check if any donations are found
+    
+        for (Donation donation : donations) {
+            if (donation.getDonorEmail().equals(donorEmail)) {
+                System.out.println(donation);
+                donationFound = true;
+            }
+        }
+    
+        if (!donationFound) {
+            System.out.println("No donations found for the donor with email: " + donorEmail);
+        }
+    }
+    
+
 // Claim a donation item
 public void claimDonationItem(String donorEmail, String itemName, String recipientEmail) {
     for (Donation donation : donations) {
