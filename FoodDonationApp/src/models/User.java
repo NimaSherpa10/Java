@@ -7,6 +7,8 @@ public abstract class User {
     private String lastName;
     private String phoneNumber;
     private String location;
+    private int id;
+    private static int counter = 1;
     
     public User(String email, String password, String firstName, String lastName, String phoneNumber, String location) {
         this.email = email;
@@ -15,9 +17,17 @@ public abstract class User {
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.location = location;
+        this.id = counter++;
     }
 
- 
+    public int getId(){
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getEmail() {
         return email;
     }

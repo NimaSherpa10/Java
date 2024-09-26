@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Donation {
     private String donorEmail;
+    private int id;
     private ArrayList<DonationItem> items;
 
     public Donation(String donorEmail) {
@@ -11,8 +12,17 @@ public class Donation {
         this.items = new ArrayList<>();
     }
 
+    public Donation(int id) {
+        this.id = id;
+        this.items = new ArrayList<>();
+    }
+
     public String getDonorEmail() {
         return donorEmail;
+    }
+
+    public int getDonorID() {
+        return id;
     }
 
     public void addItem(DonationItem item) {

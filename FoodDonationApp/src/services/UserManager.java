@@ -75,18 +75,18 @@ public class UserManager {
         }
     }
 
-    public void getDonationsByDonor(String donorEmail) {
+    public void getDonationsByDonor(int id) {
         boolean donationFound = false; // Flag to check if any donations are found
     
         for (Donation donation : donations) {
-            if (donation.getDonorEmail().equals(donorEmail)) {
+            if (donation.getDonorID() == id) {
                 System.out.println(donation);
                 donationFound = true;
             }
         }
     
         if (!donationFound) {
-            System.out.println("No donations found for the donor with email: " + donorEmail);
+            System.out.println("No donations found for the donor with email: " + id);
         }
     }
     
