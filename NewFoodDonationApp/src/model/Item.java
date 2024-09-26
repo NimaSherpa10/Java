@@ -7,23 +7,34 @@ public class Item {
     private String expirationDate;
     private boolean claimed;
     private int itemId;
+    private int donorId; 
     private static int idCounter = 1;
+   
 
-    public Item(String name, double quantity, String unit, String expirationDate, boolean claimed) {
+    public Item(String name, double quantity, String unit, String expirationDate, boolean claimed, int donorId) {
         this.name = name;
         this.quantity = quantity;
         this.unit = unit;
         this.expirationDate = expirationDate;
         this.claimed = false;
         this.itemId = idCounter++;
+        this.donorId = donorId;
+       
     }
 
+    public int getDonorId() {
+        return donorId;
+    }
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getItemId() {
+        return itemId;
     }
 
     public double getQuantity() {  

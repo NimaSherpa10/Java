@@ -7,7 +7,6 @@ import java.util.*;
 
 public class authImplementation implements userInterface {
     private HashMap<Integer, User> userMap; // userMap using ID as key
-    Scanner in = new Scanner(System.in);
 
     public authImplementation() {
         this.userMap = new HashMap<>();
