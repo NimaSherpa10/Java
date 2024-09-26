@@ -7,13 +7,14 @@ public class User {
     private String role;
     private String phoneNumber;
     private int id;
+    public static int  counter = 1;
 
     public User(String name, String password, String email, String phoneNumber,int id, String role) {
         this.name = name;
         this.password = password;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        this.id = id++;
+        this.id = counter++;
         this.role = role;
     }
 

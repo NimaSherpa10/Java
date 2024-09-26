@@ -7,14 +7,15 @@ public class Item {
     private String expirationDate;
     private boolean claimed;
     private int itemId;
+    private static int idCounter = 1;
 
     public Item(String name, double quantity, String unit, String expirationDate, boolean claimed) {
         this.name = name;
         this.quantity = quantity;
         this.unit = unit;
         this.expirationDate = expirationDate;
-        this.claimed = claimed;
-        this.itemId = itemId++;
+        this.claimed = false;
+        this.itemId = idCounter++;
     }
 
     public String getName() {
@@ -50,6 +51,15 @@ public class Item {
 
     public boolean isClaimed() {
         return claimed;
+    }
+
+    public void claim() {
+        if (this.claimed) {
+            System.out.println("This item is already claimed.");
+        } else {
+            this.claimed = true;
+            System.out.println("Item " + itemId + " has been claimed.");
+        }
     }
 
     public void setClaimed(boolean claim) {
